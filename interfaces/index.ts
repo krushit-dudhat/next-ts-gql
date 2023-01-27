@@ -4,7 +4,19 @@
 //
 // import { User } from 'path/to/interfaces';
 
-export type User = {
-  id: number
-  name: string
+
+export type Category = {
+  name: string,
+  slug: string,
+}
+
+
+
+export type Product = {
+  id: string,
+  name: string,
+  slug: string,
+  description?: string,
+  price: number,
+  category?: Category,
 }
