@@ -19,12 +19,23 @@ const Product: React.FC = (): JSX.Element => {
         price
         description
         slug
+        images {
+          url
+          fileName
+        }
+        categories {
+          name
+          slug
+          description
+        }
       }
     }`
       setLoading(true);
       fetch<{products: Product[]}>(query, { slug }).then((res) => {
-        console.log(res.products);
-        setProduct(res.products[0]);
+        console.log(res.products[0]);
+        if (res.products.length > 0) {
+          setProduct(res.products[0]);
+        }
       }).catch((err) => {
         console.log(err);
       }).finally(() => {
@@ -36,8 +47,9 @@ const Product: React.FC = (): JSX.Element => {
     <>
       <h1>Products</h1>
       {loading && <p>Loading...</p>}
-      {product && 
-        <ProductComp key={product.id} product={product} />
+      {product ? 
+        <ProductComp key={product.id} product={product} /> :
+        <p>Product not found</p>
       }
     </>
   )

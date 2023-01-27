@@ -25,12 +25,4 @@ export async function fetch<T> (query: string, variables?: object): Promise<T> {
       error,
     };
   })
-  // try {
-  //   // console.log(options)
-  //   const res = await axios(options);
-  //   console.log("RESPONSE FROM AXIOS REQUEST", res.data);
-  //   setProducts(res?.data?.data.products);
-  // } catch (err) {
-  //   console.log("ERROR FROM AXIOS REQUEST", err);
-  // }
 };

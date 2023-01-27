@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import axios from "axios";
 import ProductComp from "../../components/productComp";
+import ProductLayout from "../../components/ProductLayout";
 import type { Product } from "../../interfaces";
 import { fetch } from '../../utils/fetch';
 
@@ -16,6 +17,15 @@ const Products: React.FC = (): JSX.Element => {
         price
         description
         slug
+        images {
+          url
+          fileName
+        }
+        categories {
+          name
+          slug
+          description
+        }
       }
     }`
       setLoading(true);
@@ -30,11 +40,14 @@ const Products: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <h1>Products</h1>
-      {loading && <p>Loading...</p>}
-      {products && products.map((product) => (
-        <ProductComp key={product.id} product={product} />
-      ))}
+      <ProductLayout>
+        {loading && <p>Loading...</p>}
+        {products && products.map((product) => (
+          <div className='p-2 flex-grow-1 flex-shrink-1'>
+            <ProductComp key={product.id} product={product} />
+          </div>
+        ))}
+      </ProductLayout>
     </>
   )
 }
