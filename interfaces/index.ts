@@ -4,23 +4,23 @@
 //
 // import { User } from 'path/to/interfaces';
 
-export type Category = {
+export interface Category {
   name: string;
   slug: string;
 };
 
-export type Image = {
+export interface ImageInterface {
   fileName?: string;
   id: string;
   url: string;
 };
 
-export type Product = {
+export interface Product {
   id: string;
   name: string;
   slug: string;
   description?: string;
   price: number;
   categories?: Category[];
-  images?: Image[];
+  images?: ImageInterface[];
 };
