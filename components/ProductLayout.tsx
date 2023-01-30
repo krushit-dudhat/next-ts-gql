@@ -6,8 +6,10 @@ type Props = {
 
 const ProductLayout = ({ children }: Props) => (
   <>
-    <h1>Products</h1>
-    <div className='d-flex flex-wrap'>
+    <div className='container p-3'>
+      <h1>Products</h1>
+    </div>
+    <div className='container d-flex flex-wrap'>
       {children}
     </div>
   </>

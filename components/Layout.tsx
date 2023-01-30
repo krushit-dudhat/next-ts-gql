@@ -5,9 +5,10 @@ import Head from 'next/head'
 type Props = {
   children?: ReactNode
   title?: string
+  footer?: boolean
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title = 'This is the default title', footer = true }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -15,18 +16,19 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
-      <nav>
-        <Link href="/">Home</Link> | 
-        {/* <Link href="/about">About</Link> |{' '}
-        <Link href="/users">Users List</Link> |{' '}
-        <a href="/api/users">Users API</a> */}
+      <nav className="navbar navbar-light color-offwhite">
+        <div className="container-fluid">
+          <span className="navbar-brand mb-0 h1">Navbar</span>
+        </div>
       </nav>
     </header>
     {children}
+    {footer && (
     <footer>
       <hr />
       <span>I'm here to stay (Footer)</span>
     </footer>
+    )}
   </div>
 )
 

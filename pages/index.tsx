@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css';
 import Link from 'next/link'
 import Layout from '../components/Layout'
