@@ -3,4 +3,3 @@ module.exports = {
     domains: ["media.graphassets.com"],
   },
 };
-export {}

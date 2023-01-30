@@ -22,7 +22,7 @@ const ProductDetail = ({ product }: Props) => {
             {product.images.length > 0 && product.images.map((image, index) => (
               <Image key={index} src={image.url} width={100} height={100}
                 onClick={() => handleImageClick(image)}
-              className="product-thumb p-3 border-bottom" alt={image.fileName} />
+              className="p-3 border-bottom product-thumb" alt={image.fileName} />
             ))}
           </div>
           <div className='col-md-9 col-12 border'>

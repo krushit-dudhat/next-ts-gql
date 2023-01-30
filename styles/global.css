@@ -8,6 +8,12 @@
   height: 25rem;
   object-fit: cover;
 }
+.products-img:hover {
+  width: 100%;
+  height: 25rem;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
 
 .product-thumb-container {
   height: 40rem;
@@ -22,6 +28,11 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+.product-thumb:hover{
+  border: 1px solid rgb(246, 92, 36) !important;
+  transform: scale(1.1);
+  
 }
 
 .product-description {
