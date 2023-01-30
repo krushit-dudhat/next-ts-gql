@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 // import axios from "axios";
-import ProductComp from "../../components/productComp";
+import ProductDetail from "../../components/ProductDetail";
+import Layout from "../../components/Layout";
 import type { Product } from "../../interfaces";
 import { fetch } from '../../utils/fetch';
 
@@ -45,12 +46,17 @@ const Product: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <h1>Products</h1>
-      {loading && <p>Loading...</p>}
-      {product ? 
-        <ProductComp key={product.id} product={product} /> :
-        <p>Product not found</p>
-      }
+      <Layout title='product' footer={false}>
+        {/* <h1>Products</h1> */}
+        <br></br>
+        {loading && <p>Loading...</p>}
+        <div className='container'>
+          {product ? 
+            <ProductDetail key={product.id} product={product} /> :
+            <p>Product not found</p>
+          }
+        </div>
+      </Layout>
     </>
   )
 }
