@@ -13,6 +13,7 @@ const Layout = ({ children, title = 'This is the default title', footer = true }
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>

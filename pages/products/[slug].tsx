@@ -29,11 +29,17 @@ const Product: React.FC = (): JSX.Element => {
           slug
           description
         }
+        reviews (first: 3, orderBy: createdAt_ASC) {
+          id
+          rating
+          name
+          headline
+          content
+        }
       }
     }`
       setLoading(true);
       fetch<{products: Product[]}>(query, { slug }).then((res) => {
-        console.log(res.products[0]);
         if (res.products.length > 0) {
           setProduct(res.products[0]);
         }

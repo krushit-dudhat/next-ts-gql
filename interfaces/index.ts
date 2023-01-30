@@ -23,4 +23,14 @@ export interface Product {
   price: number;
   categories?: Category[];
   images?: ImageInterface[];
+  reviews?: Reviews[];
 };
+// reviews(first: 3, orderBy: createdAt_ASC) 
+export interface Reviews {
+  name: string;
+  id: string;
+  rating: number;
+  headline: string;
+  email?: string;
+  content: string;
+}
